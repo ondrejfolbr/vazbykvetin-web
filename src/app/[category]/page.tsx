@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
-import { ProductCard } from "@/components/ProductCard";
+import { ProductGrid } from "@/components/ProductGrid";
 import { FilterBar } from "@/components/FilterBar";
-import { Button } from "@/components/Button";
 import { getProductsByCategory, categoryMeta } from "@/lib/products";
 
 const validCategories = ["smutecni", "svatebni", "kytice"];
@@ -48,27 +47,8 @@ export default async function CategoryPage({
           {/* Filter bar */}
           <FilterBar count={categoryProducts.length} />
 
-          {/* Product grid */}
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {categoryProducts.map((product) => (
-              <ProductCard
-                key={product.id}
-                image={product.image}
-                title={product.name}
-                price={product.price}
-                badge={product.badge}
-                slug={product.slug}
-                category={product.category}
-              />
-            ))}
-          </div>
-
-          {/* Load more */}
-          <div className="mt-12 text-center">
-            <Button variant="secondary" size="md">
-              Načíst další
-            </Button>
-          </div>
+          {/* Product grid with load more */}
+          <ProductGrid products={categoryProducts} initialCount={3} step={3} />
         </div>
       </main>
 
