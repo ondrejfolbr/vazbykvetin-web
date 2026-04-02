@@ -93,12 +93,12 @@
   --color-info: #1565C0;
 
   /* Font Size — responsive with clamp (scaled down for LatinoGothic) */
-  --font-size-display-xl: clamp(2.5rem, 5vw, 4.5rem);
-  --font-size-display: clamp(2.25rem, 4vw, 3.5rem);
-  --font-size-h1: clamp(1.75rem, 3vw, 2.75rem);
-  --font-size-h2: clamp(1.5rem, 2.5vw, 2.25rem);
-  --font-size-h3: clamp(1.25rem, 2vw, 1.75rem);
-  --font-size-h4: 1.125rem;
+  --font-size-display-xl: clamp(2rem, 4vw, 3.6rem);
+  --font-size-display: clamp(1.8rem, 3.2vw, 2.8rem);
+  --font-size-h1: clamp(1.4rem, 2.4vw, 2.2rem);
+  --font-size-h2: clamp(1.2rem, 2vw, 1.8rem);
+  --font-size-h3: clamp(1rem, 1.6vw, 1.4rem);
+  --font-size-h4: 0.9rem;
   --font-size-body-lg: 1.0625rem;
   --font-size-body: 1rem;
   --font-size-body-sm: 0.875rem;
@@ -154,12 +154,12 @@
 }
 
 /* ===== Typography Utility Classes ===== */
-.text-display-xl { font-size: clamp(2.5rem, 5vw, 4.5rem); }
-.text-display { font-size: clamp(2.25rem, 4vw, 3.5rem); }
-.text-h1 { font-size: clamp(1.75rem, 3vw, 2.75rem); }
-.text-h2 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
-.text-h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
-.text-h4 { font-size: 1.125rem; }
+.text-display-xl { font-size: clamp(2rem, 4vw, 3.6rem); }
+.text-display { font-size: clamp(1.8rem, 3.2vw, 2.8rem); }
+.text-h1 { font-size: clamp(1.4rem, 2.4vw, 2.2rem); }
+.text-h2 { font-size: clamp(1.2rem, 2vw, 1.8rem); }
+.text-h3 { font-size: clamp(1rem, 1.6vw, 1.4rem); }
+.text-h4 { font-size: 0.9rem; }
 .text-body-lg { font-size: 1.0625rem; }
 .text-body { font-size: 1rem; }
 .text-body-sm { font-size: 0.875rem; }
