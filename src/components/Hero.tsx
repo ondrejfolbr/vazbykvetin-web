@@ -44,7 +44,7 @@ export function Hero({
 
       {/* Content */}
       <div className="relative z-10 w-full mx-auto max-w-[var(--width-max)] px-[var(--spacing-section-x)] pb-16 md:pb-24">
-        <h1 className="font-heading text-display-xl leading-tight text-neutral-white font-bold max-w-3xl">
+        <h1 className="font-heading text-display-xl leading-tight text-neutral-white font-medium max-w-3xl">
           {heading}
         </h1>
         {subheading && (

@@ -21,7 +21,7 @@ export default function AboutPage() {
         />
         <div className="relative z-10 flex items-end min-h-[45vh]">
           <div className="w-full mx-auto max-w-[var(--width-max)] px-[var(--spacing-section-x)] pb-12">
-            <h1 className="font-heading text-display leading-tight text-neutral-white font-bold max-w-2xl">
+            <h1 className="font-heading text-display leading-tight text-neutral-white font-medium max-w-2xl">
               O nás
             </h1>
           </div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
             ].map((item) => (
               <div key={item.title} className="text-center">
                 <div className="flex justify-center mb-4">{item.icon}</div>
-                <h3 className="font-heading text-h4 font-semibold text-neutral-900 mb-2">
+                <h3 className="font-heading text-h4 font-medium text-neutral-900 mb-2">
                   {item.title}
                 </h3>
                 <p className="font-body text-body-sm leading-relaxed text-neutral-600">
@@ -122,7 +122,7 @@ export default function AboutPage() {
           </div>
           <div className="aspect-[4/3] rounded-sm overflow-hidden bg-neutral-200 flex items-center justify-center">
             <div className="text-center p-8">
-              <p className="font-heading text-h2 font-bold text-neutral-400">PEGAS</p>
+              <p className="font-heading text-h2 font-medium text-neutral-400">PEGAS</p>
               <p className="mt-2 font-body text-body-sm text-neutral-500">pohrebpegas.cz</p>
             </div>
           </div>

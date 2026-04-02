@@ -4,7 +4,8 @@
 @font-face {
   font-family: "latinogothic";
   src: url("/fonts/latinogothic-variable.otf") format("opentype");
-  font-weight: 100 900;
+  font-weight: 1 100;
+  font-style: normal;
   font-display: swap;
 }
 
@@ -54,9 +55,9 @@
 
 /* ===== Tailwind v4 Theme ===== */
 @theme inline {
-  /* Fonts — LatinoGothic loaded via Adobe Typekit */
-  --font-heading: "latinogothic", Georgia, serif;
-  --font-body: "latinogothic", "Helvetica Neue", Arial, sans-serif;
+  /* Fonts — LatinoGothic loaded via Adobe Typekit + self-hosted fallback */
+  --font-heading: "latino-gothic-variable", "latinogothic", Georgia, serif;
+  --font-body: "latino-gothic-variable", "latinogothic", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
   /* Colors — Primary */
@@ -91,14 +92,14 @@
   --color-warning: #F9A825;
   --color-info: #1565C0;
 
-  /* Font Size — responsive with clamp */
-  --font-size-display-xl: clamp(3.5rem, 7vw, 6.5rem);
-  --font-size-display: clamp(3rem, 5.5vw, 5rem);
-  --font-size-h1: clamp(2.5rem, 4vw, 4rem);
-  --font-size-h2: clamp(2rem, 3.5vw, 3rem);
-  --font-size-h3: clamp(1.5rem, 2.5vw, 2.25rem);
-  --font-size-h4: 1.25rem;
-  --font-size-body-lg: 1.125rem;
+  /* Font Size — responsive with clamp (scaled down for LatinoGothic) */
+  --font-size-display-xl: clamp(2.5rem, 5vw, 4.5rem);
+  --font-size-display: clamp(2.25rem, 4vw, 3.5rem);
+  --font-size-h1: clamp(1.75rem, 3vw, 2.75rem);
+  --font-size-h2: clamp(1.5rem, 2.5vw, 2.25rem);
+  --font-size-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --font-size-h4: 1.125rem;
+  --font-size-body-lg: 1.0625rem;
   --font-size-body: 1rem;
   --font-size-body-sm: 0.875rem;
   --font-size-caption: 0.75rem;
@@ -153,13 +154,13 @@
 }
 
 /* ===== Typography Utility Classes ===== */
-.text-display-xl { font-size: clamp(3.5rem, 7vw, 6.5rem); }
-.text-display { font-size: clamp(3rem, 5.5vw, 5rem); }
-.text-h1 { font-size: clamp(2.5rem, 4vw, 4rem); }
-.text-h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
-.text-h3 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
-.text-h4 { font-size: 1.25rem; }
-.text-body-lg { font-size: 1.125rem; }
+.text-display-xl { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+.text-display { font-size: clamp(2.25rem, 4vw, 3.5rem); }
+.text-h1 { font-size: clamp(1.75rem, 3vw, 2.75rem); }
+.text-h2 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
+.text-h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+.text-h4 { font-size: 1.125rem; }
+.text-body-lg { font-size: 1.0625rem; }
 .text-body { font-size: 1rem; }
 .text-body-sm { font-size: 0.875rem; }
 .text-caption { font-size: 0.75rem; }
@@ -181,5 +182,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+  font-weight: 25;
   line-height: 1.5;
+  font-variation-settings: "slnt" 0, "wdth" 50;
 }
+
+/* LatinoGothic variable font uses wght axis 1-100 instead of standard 100-900.
+   Map CSS font-weight keywords to the correct range. */
+.font-light { font-weight: 15; }
+.font-normal { font-weight: 25; }
+.font-medium { font-weight: 40; }
+.font-semibold { font-weight: 55; }
+.font-bold { font-weight: 70; }

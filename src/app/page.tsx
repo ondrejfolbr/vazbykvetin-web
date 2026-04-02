@@ -127,7 +127,7 @@ export default function Home() {
             <p className="text-overline uppercase tracking-widest text-plum-30 font-medium font-body mb-2">
               Sezónní nabídka
             </p>
-            <h2 className="font-heading text-h2 leading-tight text-neutral-white font-semibold max-w-lg">
+            <h2 className="font-heading text-h2 leading-tight text-neutral-white font-medium max-w-lg">
               Dušičky — vzpomínkové kytice a dekorace
             </h2>
             <div className="mt-6">

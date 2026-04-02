@@ -280,7 +280,7 @@ export function NavBar() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="font-heading text-h2 leading-tight text-neutral-900 font-semibold"
+                    className="font-heading text-h2 leading-tight text-neutral-900 font-medium"
                     onClick={() => setMobileOpen(false)}
                   >
                     {item.label}

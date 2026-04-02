@@ -37,7 +37,7 @@ export default async function CategoryPage({
         <div className="mx-auto max-w-[var(--width-content)]">
           {/* Category header */}
           <div className="mb-8">
-            <h1 className="font-heading text-h1 leading-tight text-neutral-900 font-bold">
+            <h1 className="font-heading text-h1 leading-tight text-neutral-900 font-medium">
               {meta.title}
             </h1>
             <p className="mt-2 font-body text-body-lg text-neutral-600 max-w-2xl">

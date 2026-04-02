@@ -21,7 +21,7 @@ export default function ContactPage() {
           <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2">
             {/* Contact form */}
             <div>
-              <h3 className="font-heading text-h3 font-semibold text-neutral-900 mb-6">
+              <h3 className="font-heading text-h3 font-medium text-neutral-900 mb-6">
                 Napište nám
               </h3>
               <form className="space-y-5">
@@ -73,7 +73,7 @@ export default function ContactPage() {
 
             {/* Contact info + map */}
             <div>
-              <h3 className="font-heading text-h3 font-semibold text-neutral-900 mb-6">
+              <h3 className="font-heading text-h3 font-medium text-neutral-900 mb-6">
                 Kontaktní údaje
               </h3>
               <div className="space-y-6">

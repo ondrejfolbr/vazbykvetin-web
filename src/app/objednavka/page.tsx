@@ -40,7 +40,7 @@ export default function OrderPage() {
           <form className="mt-10 space-y-8">
             {/* Step 1: Product selection */}
             <div>
-              <h3 className="font-heading text-h4 font-semibold text-neutral-900 mb-4 flex items-center gap-2">
+              <h3 className="font-heading text-h4 font-medium text-neutral-900 mb-4 flex items-center gap-2">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-deep-plum text-neutral-white text-caption font-medium">1</span>
                 Výběr květin
               </h3>
@@ -87,7 +87,7 @@ export default function OrderPage() {
 
             {/* Step 2: Condolence card */}
             <div>
-              <h3 className="font-heading text-h4 font-semibold text-neutral-900 mb-4 flex items-center gap-2">
+              <h3 className="font-heading text-h4 font-medium text-neutral-900 mb-4 flex items-center gap-2">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-deep-plum text-neutral-white text-caption font-medium">2</span>
                 Kondolenční karta
               </h3>
@@ -109,7 +109,7 @@ export default function OrderPage() {
 
             {/* Step 3: Delivery */}
             <div>
-              <h3 className="font-heading text-h4 font-semibold text-neutral-900 mb-4 flex items-center gap-2">
+              <h3 className="font-heading text-h4 font-medium text-neutral-900 mb-4 flex items-center gap-2">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-deep-plum text-neutral-white text-caption font-medium">3</span>
                 Doručení
               </h3>
@@ -159,7 +159,7 @@ export default function OrderPage() {
 
             {/* Step 4: Contact info */}
             <div>
-              <h3 className="font-heading text-h4 font-semibold text-neutral-900 mb-4 flex items-center gap-2">
+              <h3 className="font-heading text-h4 font-medium text-neutral-900 mb-4 flex items-center gap-2">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-deep-plum text-neutral-white text-caption font-medium">4</span>
                 Vaše údaje
               </h3>

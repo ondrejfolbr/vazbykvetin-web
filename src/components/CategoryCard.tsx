@@ -32,7 +32,7 @@ export function CategoryCard({
 
       {/* Text content */}
       <div className="absolute bottom-0 left-0 right-0 p-6 transition-transform duration-300 ease-in-out group-hover:-translate-y-2">
-        <h3 className="font-heading text-h3 leading-snug text-neutral-white font-semibold">
+        <h3 className="font-heading text-h3 leading-snug text-neutral-white font-medium">
           {title}
         </h3>
         <p className="mt-1 text-body-sm text-neutral-200 font-body">

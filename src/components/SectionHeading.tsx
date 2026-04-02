@@ -20,7 +20,7 @@ export function SectionHeading({
           {overline}
         </p>
       )}
-      <h2 className="font-heading text-h2 leading-tight text-neutral-900 font-semibold">
+      <h2 className="font-heading text-h2 leading-tight text-neutral-900 font-medium">
         {heading}
       </h2>
       {body && (

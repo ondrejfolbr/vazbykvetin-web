@@ -20,7 +20,7 @@ export default function CartPage() {
             <svg className="h-16 w-16 mx-auto text-neutral-300 mb-6" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
             </svg>
-            <h2 className="font-heading text-h3 font-semibold text-neutral-900 mb-2">
+            <h2 className="font-heading text-h3 font-medium text-neutral-900 mb-2">
               Váš košík je prázdný
             </h2>
             <p className="font-body text-body text-neutral-600 mb-8 max-w-md mx-auto">
@@ -45,7 +45,7 @@ export default function CartPage() {
                   <div className="flex gap-4">
                     <div className="w-24 h-24 rounded-sm bg-neutral-200 shrink-0" />
                     <div className="flex-1">
-                      <h3 className="font-heading text-h4 font-semibold text-neutral-900">
+                      <h3 className="font-heading text-h4 font-medium text-neutral-900">
                         Název produktu
                       </h3>
                       <p className="font-body text-body-sm text-neutral-600 mt-1">
@@ -67,7 +67,7 @@ export default function CartPage() {
               {/* Order summary */}
               <div className="lg:col-span-4">
                 <div className="bg-neutral-50 rounded-sm p-6">
-                  <h3 className="font-heading text-h4 font-semibold text-neutral-900 mb-4">
+                  <h3 className="font-heading text-h4 font-medium text-neutral-900 mb-4">
                     Souhrn objednávky
                   </h3>
                   <div className="space-y-3 font-body text-body-sm">
