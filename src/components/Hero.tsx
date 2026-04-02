@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface HeroProps {
   backgroundImage?: string;
@@ -19,7 +20,7 @@ export function Hero({
 }: HeroProps) {
   return (
     <section
-      className={`relative flex items-end overflow-hidden ${fullHeight ? "min-h-screen" : "min-h-[60vh]"}`}
+      className={cn("relative flex items-end overflow-hidden", fullHeight ? "min-h-screen" : "min-h-[60vh]")}
     >
       {/* Background image */}
       {backgroundImage ? (

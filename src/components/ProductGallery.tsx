@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface ProductGalleryProps {
   productName: string;
@@ -30,22 +32,24 @@ export function ProductGallery({
       {/* Thumbnails */}
       <div className="mt-3 flex gap-3 overflow-x-auto">
         {thumbnails.map((i) => (
-          <button
+          <Button
             key={i}
+            variant="ghost"
             type="button"
             onClick={() => setActiveIndex(i)}
-            className={`shrink-0 w-20 h-20 rounded-sm overflow-hidden bg-neutral-200 cursor-pointer transition-all duration-150 ${
+            className={cn(
+              "shrink-0 w-20 h-20 rounded-sm overflow-hidden bg-neutral-200 cursor-pointer transition-all duration-150 p-0",
               activeIndex === i
                 ? "ring-2 ring-deep-plum ring-offset-2"
                 : "hover:ring-1 hover:ring-neutral-400"
-            }`}
+            )}
           >
             <img
               src={productImage}
               alt={`${productName} — náhled ${i + 1}`}
               className="w-full h-full object-cover"
             />
-          </button>
+          </Button>
         ))}
       </div>
     </div>

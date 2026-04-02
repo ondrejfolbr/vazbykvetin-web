@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 interface SectionHeadingProps {
   overline?: string;
   heading: string;
@@ -14,7 +16,7 @@ export function SectionHeading({
   const alignClass = alignment === "center" ? "text-center" : "text-left";
 
   return (
-    <div className={`${alignClass} max-w-[var(--width-narrow)] ${alignment === "center" ? "mx-auto" : ""}`}>
+    <div className={cn(alignClass, "max-w-[var(--width-narrow)]", alignment === "center" && "mx-auto")}>
       {overline && (
         <p className="text-overline uppercase tracking-widest text-plum-50 mb-3 font-body font-medium">
           {overline}
