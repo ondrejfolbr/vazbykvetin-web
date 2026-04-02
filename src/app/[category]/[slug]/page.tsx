@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { ProductGallery } from "@/components/ProductGallery";
 import { QuantitySelector } from "@/components/QuantitySelector";
 import { Button } from "@/components/ui/button";
-import { Accordion } from "@/components/Accordion";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { FilterBar } from "@/components/FilterBar";
@@ -118,28 +118,9 @@ export default async function ProductOrSubcategoryPage({
     minimumFractionDigits: 0,
   }).format(product.price);
 
-  const accordionItems = [
-    {
-      title: "Popis",
-      content: product.description,
-    },
-    {
-      title: "Složení kytice",
-      content:
-        "Růže, lilie, eucalyptus, gypsophila a sezónní zeleň. Přesné složení se může lišit podle dostupnosti květin.",
-    },
-    {
-      title: "Dodání",
-      content: isSmutecni
-        ? "Expresní doručení do 4 hodin v Praze a okolí. Doručení po celé ČR do 24 hodin. Doručíme přímo na místo obřadu."
-        : "Doručení po celé ČR do 24 hodin. Osobní odběr na prodejně v Praze.",
-    },
-    {
-      title: "Péče o květiny",
-      content:
-        "Květiny udržujte v čerstvé vodě při pokojové teplotě. Denně měňte vodu a zkracujte stonky. Vydrží 5–7 dní.",
-    },
-  ];
+  const deliveryContent = isSmutecni
+    ? "Expresní doručení do 4 hodin v Praze a okolí. Doručení po celé ČR do 24 hodin. Doručíme přímo na místo obřadu."
+    : "Doručení po celé ČR do 24 hodin. Osobní odběr na prodejně v Praze.";
 
   return (
     <>
@@ -267,7 +248,32 @@ export default async function ProductOrSubcategoryPage({
 
                 {/* Accordion */}
                 <div className="mt-8">
-                  <Accordion items={accordionItems} />
+                  <Accordion type="single" collapsible className="divide-y divide-neutral-200 border-t border-b border-neutral-200">
+                    <AccordionItem value="popis" className="border-0">
+                      <AccordionTrigger>Popis</AccordionTrigger>
+                      <AccordionContent>
+                        <p className="text-body leading-normal text-neutral-600 font-body">{product.description}</p>
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="slozeni" className="border-0">
+                      <AccordionTrigger>Složení kytice</AccordionTrigger>
+                      <AccordionContent>
+                        <p className="text-body leading-normal text-neutral-600 font-body">Růže, lilie, eucalyptus, gypsophila a sezónní zeleň. Přesné složení se může lišit podle dostupnosti květin.</p>
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="dodani" className="border-0">
+                      <AccordionTrigger>Dodání</AccordionTrigger>
+                      <AccordionContent>
+                        <p className="text-body leading-normal text-neutral-600 font-body">{deliveryContent}</p>
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="pece" className="border-0">
+                      <AccordionTrigger>Péče o květiny</AccordionTrigger>
+                      <AccordionContent>
+                        <p className="text-body leading-normal text-neutral-600 font-body">Květiny udržujte v čerstvé vodě při pokojové teplotě. Denně měňte vodu a zkracujte stonky. Vydrží 5–7 dní.</p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
               </div>
             </div>
