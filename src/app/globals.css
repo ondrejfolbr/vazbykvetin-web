@@ -15,19 +15,19 @@
 
 /* ===== CSS Custom Properties (Design Tokens) ===== */
 :root {
-  /* Primary */
+  /* VK Primary */
   --color-primary: #522953;
   --color-primary-90: #63396A;
   --color-primary-80: #754A81;
   --color-primary-70: #865B98;
   --color-primary-10: #F3EEF3;
 
-  /* Accent */
+  /* VK Accent */
   --color-accent: #9873B4;
   --color-accent-30: #C4AEDA;
   --color-accent-10: #EDE6F3;
 
-  /* Neutral */
+  /* VK Neutral */
   --color-black: #090708;
   --color-gray-900: #1A1718;
   --color-gray-800: #2D2A2C;
@@ -46,178 +46,89 @@
   --color-cool-gray-50: #D0D1DB;
   --color-light-blue-50: #C5DBF7;
 
-  /* Semantic */
+  /* VK Semantic */
   --color-success: #2E7D32;
   --color-error: #C62828;
   --color-warning: #F9A825;
   --color-info: #1565C0;
 
-  /* Background / Foreground */
-
-  --background: oklch(1 0 0);
-
-  --foreground: oklch(0.145 0.008 326);
-
-  --card: oklch(1 0 0);
-
-  --card-foreground: oklch(0.145 0.008 326);
-
-  --popover: oklch(1 0 0);
-
-  --popover-foreground: oklch(0.145 0.008 326);
-
-  --primary: oklch(0.457 0.24 277.023);
-
-  --primary-foreground: oklch(0.962 0.018 272.314);
-
-  --secondary: oklch(0.967 0.001 286.375);
-
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-
-  --muted: oklch(0.96 0.003 325.6);
-
-  --muted-foreground: oklch(0.542 0.034 322.5);
-
-  --accent: oklch(0.96 0.003 325.6);
-
-  --accent-foreground: oklch(0.212 0.019 322.12);
-
-  --destructive: oklch(0.577 0.245 27.325);
-
-  --border: oklch(0.922 0.005 325.62);
-
-  --input: oklch(0.922 0.005 325.62);
-
-  --ring: oklch(0.711 0.019 323.02);
-
-  --chart-1: oklch(0.833 0.145 321.434);
-
-  --chart-2: oklch(0.667 0.295 322.15);
-
-  --chart-3: oklch(0.591 0.293 322.896);
-
-  --chart-4: oklch(0.518 0.253 323.949);
-
-  --chart-5: oklch(0.452 0.211 324.591);
-
+  /* shadcn semantic tokens → mapped to VK palette */
+  --background: #FFFFFF;
+  --foreground: #522953;
+  --card: #FFFFFF;
+  --card-foreground: #090708;
+  --popover: #FFFFFF;
+  --popover-foreground: #090708;
+  --primary: #522953;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F4F4;
+  --secondary-foreground: #1A1718;
+  --muted: #F3EEF3;
+  --muted-foreground: #6B6769;
+  --accent: #EDE6F3;
+  --accent-foreground: #522953;
+  --destructive: #C62828;
+  --border: #E8E6E7;
+  --input: #E8E6E7;
+  --ring: #C4AEDA;
+  --chart-1: #C4AEDA;
+  --chart-2: #9873B4;
+  --chart-3: #865B98;
+  --chart-4: #754A81;
+  --chart-5: #522953;
   --radius: 0;
+  --sidebar: #FAFAFA;
+  --sidebar-foreground: #522953;
+  --sidebar-primary: #522953;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F3EEF3;
+  --sidebar-accent-foreground: #522953;
+  --sidebar-border: #E8E6E7;
+  --sidebar-ring: #C4AEDA;
+}
 
-  --sidebar: oklch(0.985 0 0);
-
-  --sidebar-foreground: oklch(0.145 0.008 326);
-
-  --sidebar-primary: oklch(0.511 0.262 276.966);
-
-  --sidebar-primary-foreground: oklch(0.962 0.018 272.314);
-
-  --sidebar-accent: oklch(0.96 0.003 325.6);
-
-  --sidebar-accent-foreground: oklch(0.212 0.019 322.12);
-
-  --sidebar-border: oklch(0.922 0.005 325.62);
-
-  --sidebar-ring: oklch(0.711 0.019 323.02);
+.dark {
+  --background: #1A1718;
+  --foreground: #FAFAFA;
+  --card: #2D2A2C;
+  --card-foreground: #FAFAFA;
+  --popover: #2D2A2C;
+  --popover-foreground: #FAFAFA;
+  --primary: #9873B4;
+  --primary-foreground: #FFFFFF;
+  --secondary: #4A4648;
+  --secondary-foreground: #FAFAFA;
+  --muted: #4A4648;
+  --muted-foreground: #B0ADAF;
+  --accent: #4A4648;
+  --accent-foreground: #FAFAFA;
+  --destructive: #C62828;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #6B6769;
+  --chart-1: #C4AEDA;
+  --chart-2: #9873B4;
+  --chart-3: #865B98;
+  --chart-4: #754A81;
+  --chart-5: #522953;
+  --sidebar: #2D2A2C;
+  --sidebar-foreground: #FAFAFA;
+  --sidebar-primary: #9873B4;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #4A4648;
+  --sidebar-accent-foreground: #FAFAFA;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #6B6769;
 }
 
 /* ===== Tailwind v4 Theme ===== */
 @theme inline {
-  /* Fonts — LatinoGothic loaded via Adobe Typekit + self-hosted fallback */
-  --font-heading: var(--font-sans);
-  --font-body: "latino-gothic-variable", "latinogothic", "Helvetica Neue", Arial, sans-serif;
+  /* shadcn layout tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "latino-gothic-variable", "latinogothic", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-
-  /* Colors — Primary */
-  --color-deep-plum: #522953;
-  --color-deep-plum-90: #63396A;
-  --color-deep-plum-80: #754A81;
-  --color-deep-plum-70: #865B98;
-  --color-deep-plum-10: #F3EEF3;
-
-  /* Colors — Accent */
-  --color-plum-50: #9873B4;
-  --color-plum-30: #C4AEDA;
-  --color-plum-10: #EDE6F3;
-
-  /* Colors — Neutral */
-  --color-neutral-black: #090708;
-  --color-neutral-900: #1A1718;
-  --color-neutral-800: #2D2A2C;
-  --color-neutral-700: #4A4648;
-  --color-neutral-600: #6B6769;
-  --color-neutral-500: #8E8A8C;
-  --color-neutral-400: #B0ADAF;
-  --color-neutral-300: #D0CDCF;
-  --color-neutral-200: #E8E6E7;
-  --color-neutral-100: #F5F4F4;
-  --color-neutral-50: #FAFAFA;
-  --color-neutral-white: #FFFFFF;
-
-  /* Colors — Semantic */
-  --color-success: #2E7D32;
-  --color-error: #C62828;
-  --color-warning: #F9A825;
-  --color-info: #1565C0;
-
-  /* Font Size — responsive with clamp (scaled down for LatinoGothic) */
-  --font-size-display-xl: clamp(2rem, 4vw, 3.6rem);
-  --font-size-display: clamp(1.8rem, 3.2vw, 2.8rem);
-  --font-size-h1: clamp(1.4rem, 2.4vw, 2.2rem);
-  --font-size-h2: clamp(1.2rem, 2vw, 1.8rem);
-  --font-size-h3: clamp(1rem, 1.6vw, 1.4rem);
-  --font-size-h4: 0.9rem;
-  --font-size-body-lg: 1.0625rem;
-  --font-size-body: 1rem;
-  --font-size-body-sm: 0.875rem;
-  --font-size-caption: 0.75rem;
-  --font-size-overline: 0.6875rem;
-
-  /* Line Height */
-  --line-height-tight: 1.1;
-  --line-height-snug: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-
-  /* Letter Spacing */
-  --letter-spacing-tight: -0.02em;
-  --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.05em;
-  --letter-spacing-wider: 0.1em;
-  --letter-spacing-widest: 0.2em;
-
-  /* Spacing */
-  --spacing-section-y: clamp(4rem, 8vw, 8rem);
-  --spacing-section-x: clamp(1rem, 5vw, 6rem);
-
-  /* Layout */
-  --width-max: 1440px;
-  --width-content: 1200px;
-  --width-narrow: 800px;
-
-  /* Border Radius */
-  --radius-sm: 0;
-  --radius-md: 0;
-  --radius-lg: 0;
-  --radius-full: 0;
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(9,7,8,0.05);
-  --shadow-md: 0 4px 12px rgba(9,7,8,0.08);
-  --shadow-lg: 0 8px 24px rgba(9,7,8,0.12);
-  --shadow-xl: 0 16px 48px rgba(9,7,8,0.16);
-
-  /* Transitions */
-  --transition-timing-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-timing-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-timing-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-timing-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* Breakpoints */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1440px;
-  --font-sans: var(--font-sans);
+  --font-heading: "latino-gothic-variable", "latinogothic", Georgia, serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -247,15 +158,120 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --color-foreground: var(--foreground);
-  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* VK Fonts (body maps to --font-sans) */
+  --font-body: "latino-gothic-variable", "latinogothic", "Helvetica Neue", Arial, sans-serif;
+
+  /* VK Colors — Primary */
+  --color-deep-plum: #522953;
+  --color-deep-plum-90: #63396A;
+  --color-deep-plum-80: #754A81;
+  --color-deep-plum-70: #865B98;
+  --color-deep-plum-10: #F3EEF3;
+
+  /* VK Colors — Accent */
+  --color-plum-50: #9873B4;
+  --color-plum-30: #C4AEDA;
+  --color-plum-10: #EDE6F3;
+
+  /* VK Colors — Neutral */
+  --color-neutral-black: #090708;
+  --color-neutral-900: #1A1718;
+  --color-neutral-800: #2D2A2C;
+  --color-neutral-700: #4A4648;
+  --color-neutral-600: #6B6769;
+  --color-neutral-500: #8E8A8C;
+  --color-neutral-400: #B0ADAF;
+  --color-neutral-300: #D0CDCF;
+  --color-neutral-200: #E8E6E7;
+  --color-neutral-100: #F5F4F4;
+  --color-neutral-50: #FAFAFA;
+  --color-neutral-white: #FFFFFF;
+
+  /* VK Colors — Semantic */
+  --color-success: #2E7D32;
+  --color-error: #C62828;
+  --color-warning: #F9A825;
+  --color-info: #1565C0;
+
+  /* VK Font Size */
+  --font-size-display-xl: clamp(2rem, 4vw, 3.6rem);
+  --font-size-display: clamp(1.8rem, 3.2vw, 2.8rem);
+  --font-size-h1: clamp(1.4rem, 2.4vw, 2.2rem);
+  --font-size-h2: clamp(1.2rem, 2vw, 1.8rem);
+  --font-size-h3: clamp(1rem, 1.6vw, 1.4rem);
+  --font-size-h4: 0.9rem;
+  --font-size-body-lg: 1.0625rem;
+  --font-size-body: 1rem;
+  --font-size-body-sm: 0.875rem;
+  --font-size-caption: 0.75rem;
+  --font-size-overline: 0.6875rem;
+
+  /* VK Line Height */
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* VK Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  --letter-spacing-wider: 0.1em;
+  --letter-spacing-widest: 0.2em;
+
+  /* VK Spacing */
+  --spacing-section-y: clamp(4rem, 8vw, 8rem);
+  --spacing-section-x: clamp(1rem, 5vw, 6rem);
+
+  /* VK Layout */
+  --width-max: 1440px;
+  --width-content: 1200px;
+  --width-narrow: 800px;
+
+  /* VK Border Radius (all zero) */
+  --radius-full: 0;
+
+  /* VK Shadows */
+  --shadow-sm: 0 1px 2px rgba(9,7,8,0.05);
+  --shadow-md: 0 4px 12px rgba(9,7,8,0.08);
+  --shadow-lg: 0 8px 24px rgba(9,7,8,0.12);
+  --shadow-xl: 0 16px 48px rgba(9,7,8,0.16);
+
+  /* VK Transitions */
+  --transition-timing-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-timing-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-timing-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-timing-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* VK Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
 }
 
-/* ===== Typography Utility Classes ===== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ===== VK Typography Utility Classes ===== */
 .text-display-xl { font-size: clamp(2rem, 4vw, 3.6rem); }
 .text-display { font-size: clamp(1.8rem, 3.2vw, 2.8rem); }
 .text-h1 { font-size: clamp(1.4rem, 2.4vw, 2.2rem); }
@@ -279,7 +295,7 @@
 .tracking-wider { letter-spacing: 0.1em; }
 .tracking-widest { letter-spacing: 0.2em; }
 
-/* ===== Global: primary purple text color ===== */
+/* ===== VK Global: primary purple text color ===== */
 .text-neutral-black,
 .text-neutral-900,
 .text-neutral-800,
@@ -291,21 +307,22 @@
   color: var(--color-primary-70) !important;
 }
 
-/* ===== Global: no border-radius anywhere ===== */
+/* ===== VK Global: no border-radius anywhere ===== */
 * {
   border-radius: 0 !important;
 }
 
-/* ===== Base Styles ===== */
+/* ===== VK Base Styles ===== */
 body {
+  background: var(--background);
+  color: var(--foreground);
   font-family: var(--font-body);
   font-weight: 25;
   line-height: 1.5;
   font-variation-settings: "slnt" 0, "wdth" 100;
 }
 
-/* LatinoGothic variable font uses wght axis 1-100 instead of standard 100-900.
-   Map CSS font-weight keywords to the correct range. */
+/* LatinoGothic variable font uses wght axis 1-100 instead of standard 100-900. */
 .font-light { font-weight: 15; }
 .font-normal { font-weight: 25; }
 .font-medium { font-weight: 40; }
@@ -325,50 +342,4 @@ body {
 }
 .animate-slide-up {
   animation: slide-up 0.4s ease-out;
-}
-
-.dark {
-  --background: oklch(0.145 0.008 326);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.212 0.019 322.12);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.212 0.019 322.12);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.398 0.195 277.366);
-  --primary-foreground: oklch(0.962 0.018 272.314);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.263 0.024 320.12);
-  --muted-foreground: oklch(0.711 0.019 323.02);
-  --accent: oklch(0.263 0.024 320.12);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.542 0.034 322.5);
-  --chart-1: oklch(0.833 0.145 321.434);
-  --chart-2: oklch(0.667 0.295 322.15);
-  --chart-3: oklch(0.591 0.293 322.896);
-  --chart-4: oklch(0.518 0.253 323.949);
-  --chart-5: oklch(0.452 0.211 324.591);
-  --sidebar: oklch(0.212 0.019 322.12);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.585 0.233 277.117);
-  --sidebar-primary-foreground: oklch(0.962 0.018 272.314);
-  --sidebar-accent: oklch(0.263 0.024 320.12);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.542 0.034 322.5);
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
-  }
 }

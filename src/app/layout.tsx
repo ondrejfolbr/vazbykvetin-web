@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { CookieConsent } from "@/components/CookieConsent";
-import { Geist } from "next/font/google";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Vazby Květin — Květiny pro chvíle, na kterých záleží",
@@ -18,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs" className={cn("h-full antialiased", "font-sans", geist.variable)}>
+    <html lang="cs" className="h-full antialiased">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/tkt6gli.css" />
       </head>
