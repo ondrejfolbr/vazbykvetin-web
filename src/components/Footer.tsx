@@ -16,11 +16,12 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Column 1: Logo + claim + social */}
           <div>
-            <Link
-              href="/"
-              className="font-heading text-h3 font-bold text-neutral-white"
-            >
-              Vazby Květin
+            <Link href="/" className="block">
+              <img
+                src="/images/logo-white.png"
+                alt="Vazby Květin"
+                className="w-40 h-auto"
+              />
             </Link>
             <p className="mt-3 font-body text-body-sm leading-relaxed text-neutral-white/60">
               Vazby mezi lidmi, které nekončí.

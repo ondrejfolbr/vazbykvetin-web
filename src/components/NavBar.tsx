@@ -101,9 +101,13 @@ export function NavBar() {
         {/* Logo */}
         <Link
           href="/"
-          className={`font-heading font-bold text-neutral-900 transition-all duration-300 ${scrolled ? "text-h4 py-3" : "text-h3 py-5"}`}
+          className={`block transition-all duration-300 ${scrolled ? "py-3" : "py-5"}`}
         >
-          Vazby Květin
+          <img
+            src="/images/logo-purple.png"
+            alt="Vazby Květin"
+            className={`h-auto transition-all duration-300 ${scrolled ? "w-32" : "w-40"}`}
+          />
         </Link>
 
         {/* Desktop nav links */}
@@ -250,10 +254,14 @@ export function NavBar() {
           <div className="flex items-center justify-between px-[var(--spacing-section-x)] py-5 border-b border-neutral-200">
             <Link
               href="/"
-              className="font-heading text-h3 font-bold text-neutral-900"
+              className="block"
               onClick={() => setMobileOpen(false)}
             >
-              Vazby Květin
+              <img
+                src="/images/logo-purple.png"
+                alt="Vazby Květin"
+                className="w-40 h-auto"
+              />
             </Link>
             <button
               type="button"
