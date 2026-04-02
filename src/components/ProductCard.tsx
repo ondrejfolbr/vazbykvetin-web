@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 
 interface ProductCardProps {
   image: string;
@@ -43,9 +44,9 @@ export function ProductCard({
 
         {/* Badge */}
         {badge && (
-          <span className="absolute top-3 left-3 bg-deep-plum text-neutral-white text-caption font-medium px-2 py-1 rounded-sm">
+          <Badge className="absolute top-3 left-3 bg-deep-plum text-neutral-white text-caption font-medium px-2 py-1">
             {badge}
-          </span>
+          </Badge>
         )}
       </div>
 
