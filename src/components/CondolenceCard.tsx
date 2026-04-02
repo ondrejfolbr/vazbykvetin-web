@@ -1,13 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
 
 export function CondolenceCard() {
   const [text, setText] = useState("");
   const maxLength = 200;
 
   return (
-    <div className="border border-neutral-200 rounded-sm p-4">
+    <Card className="border-neutral-200">
+      <CardContent className="p-4">
       <div className="flex items-center justify-between mb-3">
         <p className="font-body text-body-sm font-medium text-neutral-800">
           Kondolenční kartička
@@ -17,7 +20,7 @@ export function CondolenceCard() {
         </span>
       </div>
 
-      <textarea
+      <Textarea
         value={text}
         onChange={(e) => setText(e.target.value.slice(0, maxLength))}
         placeholder="Napište text kondolence…"
@@ -36,6 +39,7 @@ export function CondolenceCard() {
           </p>
         </div>
       )}
-    </div>
+      </CardContent>
+    </Card>
   );
 }
