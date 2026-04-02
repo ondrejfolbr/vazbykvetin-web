@@ -2,7 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { type MegaMenuColumn } from "./MegaMenu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+interface MegaMenuColumn {
+  heading?: string;
+  links: { label: string; href: string }[];
+}
 
 interface NavItem {
   label: string;
@@ -164,23 +169,92 @@ export function NavBar() {
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-neutral-700 cursor-pointer"
-          aria-label={mobileOpen ? "Zavřít menu" : "Otevřít menu"}
-        >
-          {mobileOpen ? (
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          )}
-        </button>
+        {/* Mobile hamburger — Sheet trigger */}
+        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+          <SheetTrigger asChild>
+            <button
+              type="button"
+              className="lg:hidden p-2 text-neutral-700 cursor-pointer"
+              aria-label="Otevřít menu"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </SheetTrigger>
+          <SheetContent side="left" showCloseButton={false} className="w-full sm:w-96 bg-neutral-white p-0">
+            <div className="flex items-center justify-between px-[var(--spacing-section-x)] py-5 border-b border-neutral-200">
+              <Link
+                href="/"
+                className="block"
+                onClick={() => setMobileOpen(false)}
+              >
+                <img
+                  src="/images/logo-purple.png"
+                  alt="Vazby Květin"
+                  className="w-40 h-auto"
+                />
+              </Link>
+              <button
+                type="button"
+                onClick={() => setMobileOpen(false)}
+                className="p-2 text-neutral-700 cursor-pointer"
+                aria-label="Zavřít menu"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <nav className="px-[var(--spacing-section-x)] py-8">
+              <ul className="space-y-6">
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="font-heading text-h2 leading-tight text-neutral-900 font-medium"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                    {item.megaMenu && (
+                      <ul className="mt-2 ml-4 space-y-1">
+                        {item.megaMenu.columns.flatMap((col) =>
+                          col.links.map((link) => (
+                            <li key={link.href}>
+                              <Link
+                                href={link.href}
+                                className="font-body text-body text-neutral-600 hover:text-neutral-900"
+                                onClick={() => setMobileOpen(false)}
+                              >
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))
+                        )}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-8 pt-8 border-t border-neutral-200 space-y-4">
+                <a
+                  href="tel:+420604585271"
+                  className="block font-body text-body text-neutral-600"
+                >
+                  604 585 271
+                </a>
+                <Link
+                  href="/kosik/"
+                  className="block font-body text-body font-medium text-neutral-900"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Košík (0)
+                </Link>
+              </div>
+            </nav>
+          </SheetContent>
+        </Sheet>
       </nav>
 
       {/* Mega menu — rendered at header level, full width */}
@@ -248,81 +322,6 @@ export function NavBar() {
         )}
       </div>
 
-      {/* Mobile fullscreen overlay */}
-      {mobileOpen && (
-        <div className="fixed inset-0 top-0 z-40 bg-neutral-white lg:hidden">
-          <div className="flex items-center justify-between px-[var(--spacing-section-x)] py-5 border-b border-neutral-200">
-            <Link
-              href="/"
-              className="block"
-              onClick={() => setMobileOpen(false)}
-            >
-              <img
-                src="/images/logo-purple.png"
-                alt="Vazby Květin"
-                className="w-40 h-auto"
-              />
-            </Link>
-            <button
-              type="button"
-              onClick={() => setMobileOpen(false)}
-              className="p-2 text-neutral-700 cursor-pointer"
-              aria-label="Zavřít menu"
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <nav className="px-[var(--spacing-section-x)] py-8">
-            <ul className="space-y-6">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="font-heading text-h2 leading-tight text-neutral-900 font-medium"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                  {item.megaMenu && (
-                    <ul className="mt-2 ml-4 space-y-1">
-                      {item.megaMenu.columns.flatMap((col) =>
-                        col.links.map((link) => (
-                          <li key={link.href}>
-                            <Link
-                              href={link.href}
-                              className="font-body text-body text-neutral-600 hover:text-neutral-900"
-                              onClick={() => setMobileOpen(false)}
-                            >
-                              {link.label}
-                            </Link>
-                          </li>
-                        ))
-                      )}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 pt-8 border-t border-neutral-200 space-y-4">
-              <a
-                href="tel:+420604585271"
-                className="block font-body text-body text-neutral-600"
-              >
-                604 585 271
-              </a>
-              <Link
-                href="/kosik/"
-                className="block font-body text-body font-medium text-neutral-900"
-                onClick={() => setMobileOpen(false)}
-              >
-                Košík (0)
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
