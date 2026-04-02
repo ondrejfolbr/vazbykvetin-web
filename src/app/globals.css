@@ -184,7 +184,7 @@ body {
   font-family: var(--font-body);
   font-weight: 25;
   line-height: 1.5;
-  font-variation-settings: "slnt" 0, "wdth" 50;
+  font-variation-settings: "slnt" 0, "wdth" 100;
 }
 
 /* LatinoGothic variable font uses wght axis 1-100 instead of standard 100-900.
