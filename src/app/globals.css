@@ -46,9 +46,9 @@
 
 /* ===== Tailwind v4 Theme ===== */
 @theme inline {
-  /* Fonts — using CSS variables set by next/font/google */
-  --font-heading: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
-  --font-body: var(--font-dm-sans), "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  /* Fonts — LatinoGothic loaded via Adobe Typekit */
+  --font-heading: "latinogothic", Georgia, serif;
+  --font-body: "latinogothic", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
   /* Colors — Primary */
