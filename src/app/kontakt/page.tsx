@@ -83,8 +83,16 @@ export default function ContactPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z" />
                   </svg>
                   <div>
-                    <p className="font-body text-body font-medium text-neutral-900">Adresa</p>
-                    <p className="font-body text-body-sm text-neutral-600">Ulice 123, 110 00 Praha</p>
+                    <p className="font-body text-body font-medium text-neutral-900">Adresa provozovny</p>
+                    <p className="font-body text-body-sm text-neutral-600">
+                      VAZBY KVĚTIN s.r.o.<br />
+                      Mirošovická 704<br />
+                      251 64 Mnichovice
+                    </p>
+                    <p className="font-body text-caption text-neutral-500 mt-1">
+                      IČ: 75339170<br />
+                      DIČ: CZ8406100505
+                    </p>
                   </div>
                 </div>
 
@@ -94,8 +102,17 @@ export default function ContactPage() {
                   </svg>
                   <div>
                     <p className="font-body text-body font-medium text-neutral-900">Telefon</p>
-                    <a href="tel:+420000000000" className="font-body text-body-sm text-neutral-600 hover:text-deep-plum transition-colors duration-150">
-                      +420 XXX XXX XXX
+                    <p className="font-body text-body-sm text-neutral-600">
+                      Vedoucí výroby květin a objednávky e-shop:
+                    </p>
+                    <a href="tel:+420604585271" className="font-body text-body-sm text-neutral-600 hover:text-deep-plum transition-colors duration-150">
+                      604 585 271
+                    </a>
+                    <p className="font-body text-body-sm text-neutral-600 mt-2">
+                      Výrobní hala vazárny:
+                    </p>
+                    <a href="tel:+420608348111" className="font-body text-body-sm text-neutral-600 hover:text-deep-plum transition-colors duration-150">
+                      608 348 111
                     </a>
                   </div>
                 </div>
@@ -117,11 +134,11 @@ export default function ContactPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
-                    <p className="font-body text-body font-medium text-neutral-900">Otevírací doba</p>
+                    <p className="font-body text-body font-medium text-neutral-900">Otevírací doba výrobní haly</p>
                     <p className="font-body text-body-sm text-neutral-600">
-                      Po–Pá 8:00–17:00<br />
-                      So 9:00–12:00<br />
-                      Ne zavřeno
+                      Po – Pá: 07:00 – 15:30<br />
+                      So: Zavřeno<br />
+                      Ne: 07:00 – 12:00
                     </p>
                   </div>
                 </div>

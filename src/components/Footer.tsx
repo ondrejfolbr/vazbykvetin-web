@@ -75,13 +75,24 @@ export function Footer() {
               Kontakt
             </p>
             <ul className="space-y-2 font-body text-body-sm text-neutral-white/70">
-              <li>Ulice 123, 110 00 Praha</li>
+              <li>
+                VAZBY KVĚTIN s.r.o.<br />
+                Mirošovická 704<br />
+                251 64 Mnichovice
+              </li>
               <li>
                 <a
-                  href="tel:+420000000000"
+                  href="tel:+420604585271"
                   className="hover:text-neutral-white transition-colors duration-150"
                 >
-                  +420 XXX XXX XXX
+                  604 585 271
+                </a>
+                {" / "}
+                <a
+                  href="tel:+420608348111"
+                  className="hover:text-neutral-white transition-colors duration-150"
+                >
+                  608 348 111
                 </a>
               </li>
               <li>
@@ -93,9 +104,11 @@ export function Footer() {
                 </a>
               </li>
               <li className="pt-2 text-neutral-white/50">
-                Po–Pá 8:00–17:00
+                Po – Pá: 07:00 – 15:30
                 <br />
-                So 9:00–12:00
+                So: Zavřeno
+                <br />
+                Ne: 07:00 – 12:00
               </li>
             </ul>
           </div>

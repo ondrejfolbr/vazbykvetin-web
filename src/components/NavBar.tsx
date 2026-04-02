@@ -136,10 +136,10 @@ export function NavBar() {
         {/* Utility nav */}
         <div className="hidden lg:flex items-center gap-6">
           <a
-            href="tel:+420000000000"
+            href="tel:+420604585271"
             className="font-body text-body-sm text-neutral-600 hover:text-deep-plum transition-colors duration-150"
           >
-            +420 XXX XXX XXX
+            604 585 271
           </a>
           <Link
             href="/kosik/"
@@ -307,10 +307,10 @@ export function NavBar() {
             </ul>
             <div className="mt-8 pt-8 border-t border-neutral-200 space-y-4">
               <a
-                href="tel:+420000000000"
+                href="tel:+420604585271"
                 className="block font-body text-body text-neutral-600"
               >
-                +420 XXX XXX XXX
+                604 585 271
               </a>
               <Link
                 href="/kosik/"
