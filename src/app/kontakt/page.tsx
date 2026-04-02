@@ -2,6 +2,9 @@ import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 export default function ContactPage() {
   return (
@@ -26,42 +29,42 @@ export default function ContactPage() {
               </h3>
               <form className="space-y-5">
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Jméno a příjmení
-                  </label>
-                  <input
+                  </Label>
+                  <Input
                     type="text"
-                    className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                    className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                     placeholder="Jan Novák"
                   />
                 </div>
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     E-mail
-                  </label>
-                  <input
+                  </Label>
+                  <Input
                     type="email"
-                    className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                    className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                     placeholder="jan@email.cz"
                   />
                 </div>
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Telefon
-                  </label>
-                  <input
+                  </Label>
+                  <Input
                     type="tel"
-                    className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                    className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                     placeholder="+420 XXX XXX XXX"
                   />
                 </div>
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Zpráva
-                  </label>
-                  <textarea
+                  </Label>
+                  <Textarea
                     rows={5}
-                    className="w-full px-4 py-3 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150 resize-none"
+                    className="font-body text-body-sm text-neutral-900 placeholder:text-neutral-400 resize-none"
                     placeholder="Jak vám můžeme pomoci?"
                   />
                 </div>

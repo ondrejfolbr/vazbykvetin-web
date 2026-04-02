@@ -4,6 +4,10 @@ import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function OrderPage() {
   return (
@@ -46,39 +50,47 @@ export default function OrderPage() {
               </h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Typ produktu
-                  </label>
-                  <select className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150 bg-neutral-white">
-                    <option value="">Vyberte typ</option>
-                    <option value="kytice">Pohřební kytice</option>
-                    <option value="venec">Smuteční věnec</option>
-                    <option value="rakev">Kytice na rakev</option>
-                    <option value="urna">Kytice na urnu</option>
-                    <option value="dekorace">Pietní dekorace</option>
-                    <option value="kos">Květinový koš</option>
-                  </select>
+                  </Label>
+                  <Select>
+                    <SelectTrigger className="w-full h-11 font-body text-body-sm text-neutral-900">
+                      <SelectValue placeholder="Vyberte typ" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="kytice">Pohřební kytice</SelectItem>
+                      <SelectItem value="venec">Smuteční věnec</SelectItem>
+                      <SelectItem value="rakev">Kytice na rakev</SelectItem>
+                      <SelectItem value="urna">Kytice na urnu</SelectItem>
+                      <SelectItem value="dekorace">Pietní dekorace</SelectItem>
+                      <SelectItem value="kos">Květinový koš</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Cenový rozsah
-                  </label>
-                  <select className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150 bg-neutral-white">
-                    <option value="">Vyberte rozsah</option>
-                    <option value="1000">do 1 000 Kč</option>
-                    <option value="2000">1 000 – 2 000 Kč</option>
-                    <option value="3000">2 000 – 3 000 Kč</option>
-                    <option value="5000">3 000 – 5 000 Kč</option>
-                    <option value="5001">nad 5 000 Kč</option>
-                  </select>
+                  </Label>
+                  <Select>
+                    <SelectTrigger className="w-full h-11 font-body text-body-sm text-neutral-900">
+                      <SelectValue placeholder="Vyberte rozsah" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="1000">do 1 000 Kč</SelectItem>
+                      <SelectItem value="2000">1 000 – 2 000 Kč</SelectItem>
+                      <SelectItem value="3000">2 000 – 3 000 Kč</SelectItem>
+                      <SelectItem value="5000">3 000 – 5 000 Kč</SelectItem>
+                      <SelectItem value="5001">nad 5 000 Kč</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Preferované barvy / poznámka ke květinám
-                  </label>
-                  <textarea
+                  </Label>
+                  <Textarea
                     rows={3}
-                    className="w-full px-4 py-3 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150 resize-none"
+                    className="font-body text-body-sm text-neutral-900 placeholder:text-neutral-400 resize-none"
                     placeholder="Bílé a krémové tóny, lilie, bez trnitých květin..."
                   />
                 </div>
@@ -93,13 +105,13 @@ export default function OrderPage() {
               </h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Text na kartu (volitelné)
-                  </label>
-                  <textarea
+                  </Label>
+                  <Textarea
                     rows={3}
                     maxLength={200}
-                    className="w-full px-4 py-3 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150 resize-none"
+                    className="font-body text-body-sm text-neutral-900 placeholder:text-neutral-400 resize-none"
                     placeholder="S upřímnou soustrástí..."
                   />
                   <p className="mt-1 font-body text-caption text-neutral-500">Max 200 znaků</p>
@@ -116,41 +128,41 @@ export default function OrderPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                    <Label className="font-body text-body-sm font-medium text-neutral-800">
                       Datum doručení
-                    </label>
-                    <input
+                    </Label>
+                    <Input
                       type="date"
-                      className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                      className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                     />
                   </div>
                   <div>
-                    <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                    <Label className="font-body text-body-sm font-medium text-neutral-800">
                       Čas doručení
-                    </label>
-                    <input
+                    </Label>
+                    <Input
                       type="time"
-                      className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                      className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Místo doručení
-                  </label>
-                  <input
+                  </Label>
+                  <Input
                     type="text"
-                    className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                    className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                     placeholder="Název obřadní síně, adresa hřbitova..."
                   />
                 </div>
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Adresa
-                  </label>
-                  <input
+                  </Label>
+                  <Input
                     type="text"
-                    className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                    className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                     placeholder="Ulice, město, PSČ"
                   />
                 </div>
@@ -166,43 +178,43 @@ export default function OrderPage() {
               <div className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                    <Label className="font-body text-body-sm font-medium text-neutral-800">
                       Jméno
-                    </label>
-                    <input
+                    </Label>
+                    <Input
                       type="text"
-                      className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                      className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                       placeholder="Jan"
                     />
                   </div>
                   <div>
-                    <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                    <Label className="font-body text-body-sm font-medium text-neutral-800">
                       Příjmení
-                    </label>
-                    <input
+                    </Label>
+                    <Input
                       type="text"
-                      className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                      className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                       placeholder="Novák"
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     Telefon
-                  </label>
-                  <input
+                  </Label>
+                  <Input
                     type="tel"
-                    className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                    className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                     placeholder="+420 XXX XXX XXX"
                   />
                 </div>
                 <div>
-                  <label className="block font-body text-body-sm font-medium text-neutral-800 mb-1">
+                  <Label className="font-body text-body-sm font-medium text-neutral-800">
                     E-mail
-                  </label>
-                  <input
+                  </Label>
+                  <Input
                     type="email"
-                    className="w-full h-11 px-4 rounded-sm border border-neutral-300 font-body text-body-sm text-neutral-900 focus:outline-none focus:border-deep-plum focus:ring-1 focus:ring-deep-plum transition-colors duration-150"
+                    className="h-11 font-body text-body-sm text-neutral-900 placeholder:text-neutral-400"
                     placeholder="jan@email.cz"
                   />
                 </div>
