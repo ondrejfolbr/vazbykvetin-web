@@ -194,6 +194,8 @@
   --color-neutral-100: #F5F4F4;
   --color-neutral-50: #FAFAFA;
   --color-neutral-white: #FFFFFF;
+  --color-white: #FFFFFF;
+  --color-black: #090708;
 
   /* VK Colors — Semantic */
   --color-success: #2E7D32;
