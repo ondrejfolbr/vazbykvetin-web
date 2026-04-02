@@ -1,6 +1,13 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 interface FilterOption {
   label: string;
@@ -39,7 +46,7 @@ const sortOptions: FilterOption[] = [
   { label: "Nejnovější", value: "newest" },
 ];
 
-function Dropdown({
+function FilterDropdown({
   label,
   options,
   icon,
@@ -48,63 +55,45 @@ function Dropdown({
   options: FilterOption[];
   icon: React.ReactNode;
 }) {
-  const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState("");
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    }
-    if (open) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [open]);
 
   const selectedLabel = options.find((o) => o.value === selected)?.label;
   const displayLabel =
     selected && selectedLabel ? `${label}: ${selectedLabel}` : label;
 
   return (
-    <div ref={ref} className="relative">
-      <button
-        type="button"
-        onClick={() => setOpen((prev) => !prev)}
-        className={`inline-flex items-center gap-1 h-9 px-4 rounded-sm border font-body text-body-sm transition-colors duration-150 cursor-pointer ${
-          open || selected
-            ? "border-deep-plum text-deep-plum"
-            : "border-neutral-300 text-neutral-700 hover:border-deep-plum"
-        }`}
-      >
-        {displayLabel}
-        {icon}
-      </button>
-
-      {open && (
-        <div className="absolute top-full left-0 mt-1 min-w-[180px] bg-neutral-white border border-neutral-200 rounded-sm shadow-lg z-50">
-          {options.map((option) => (
-            <button
-              key={option.value}
-              type="button"
-              onClick={() => {
-                setSelected(option.value);
-                setOpen(false);
-              }}
-              className={`block w-full text-left px-4 py-2 font-body text-body-sm transition-colors duration-100 cursor-pointer ${
-                selected === option.value
-                  ? "text-deep-plum bg-neutral-100"
-                  : "text-neutral-700 hover:bg-neutral-50 hover:text-deep-plum"
-              }`}
-            >
-              {option.label}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          className={cn(
+            "inline-flex items-center gap-1 h-9 px-4 rounded-sm border font-body text-body-sm transition-colors duration-150 cursor-pointer",
+            selected
+              ? "border-deep-plum text-deep-plum"
+              : "border-neutral-300 text-neutral-700 hover:border-deep-plum"
+          )}
+        >
+          {displayLabel}
+          {icon}
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="min-w-[180px] bg-neutral-white border border-neutral-200 rounded-sm shadow-lg">
+        {options.map((option) => (
+          <DropdownMenuItem
+            key={option.value}
+            onClick={() => setSelected(option.value)}
+            className={cn(
+              "block w-full text-left px-4 py-2 font-body text-body-sm transition-colors duration-100 cursor-pointer",
+              selected === option.value
+                ? "text-deep-plum bg-neutral-100"
+                : "text-neutral-700 hover:bg-neutral-50 hover:text-deep-plum"
+            )}
+          >
+            {option.label}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
 
@@ -144,7 +133,7 @@ export function FilterBar({ count }: { count: number }) {
   return (
     <div className="flex flex-wrap items-center gap-3 py-4 border-b border-neutral-200">
       {Object.entries(filterConfig).map(([label, options]) => (
-        <Dropdown
+        <FilterDropdown
           key={label}
           label={label}
           options={options}
@@ -159,7 +148,7 @@ export function FilterBar({ count }: { count: number }) {
       <span className="font-body text-body-sm text-neutral-500">
         {count} {count === 1 ? "produkt" : count < 5 ? "produkty" : "produktů"}
       </span>
-      <Dropdown label="Řazení" options={sortOptions} icon={sortIcon} />
+      <FilterDropdown label="Řazení" options={sortOptions} icon={sortIcon} />
     </div>
   );
 }
