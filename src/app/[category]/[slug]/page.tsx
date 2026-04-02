@@ -3,7 +3,7 @@ import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { ProductGallery } from "@/components/ProductGallery";
 import { QuantitySelector } from "@/components/QuantitySelector";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/button";
 import { Accordion } from "@/components/Accordion";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
@@ -91,8 +91,8 @@ export default async function ProductOrSubcategoryPage({
 
             {/* Back to category */}
             <div className="mt-12 text-center">
-              <Button variant="ghost" as="a" href={`/${category}/`}>
-                Zobrazit vše v {categoryLabel[category] || category}
+              <Button variant="ghost" asChild>
+                <a href={`/${category}/`}>Zobrazit vše v {categoryLabel[category] || category}</a>
               </Button>
             </div>
           </div>
@@ -242,19 +242,18 @@ export default async function ProductOrSubcategoryPage({
 
                 {/* CTA buttons */}
                 <div className="mt-8 space-y-3">
-                  <Button variant="primary" size="lg" className="w-full">
+                  <Button size="lg" className="w-full">
                     Přidat do košíku
                   </Button>
 
                   {isSmutecni && (
                     <Button
-                      variant="secondary"
+                      variant="outline"
                       size="lg"
                       className="w-full"
-                      as="a"
-                      href="/objednavka/"
+                      asChild
                     >
-                      Rychlá objednávka
+                      <a href="/objednavka/">Rychlá objednávka</a>
                     </Button>
                   )}
                 </div>

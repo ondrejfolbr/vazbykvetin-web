@@ -1,4 +1,3 @@
-export { Button } from "./Button";
 export { SectionHeading } from "./SectionHeading";
 export { ProductCard } from "./ProductCard";
 export { CategoryCard } from "./CategoryCard";

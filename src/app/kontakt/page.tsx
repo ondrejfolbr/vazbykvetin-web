@@ -1,7 +1,7 @@
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/button";
 
 export default function ContactPage() {
   return (
@@ -65,7 +65,7 @@ export default function ContactPage() {
                     placeholder="Jak vám můžeme pomoci?"
                   />
                 </div>
-                <Button variant="primary" size="lg" className="w-full">
+                <Button size="lg" className="w-full">
                   Odeslat zprávu
                 </Button>
               </form>

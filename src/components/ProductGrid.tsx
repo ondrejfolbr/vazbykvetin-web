@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ProductCard } from "./ProductCard";
-import { Button } from "./Button";
+import { Button } from "@/components/ui/button";
 
 interface Product {
   id: number;
@@ -44,7 +44,7 @@ export function ProductGrid({ products, initialCount = 3, step = 3 }: ProductGri
       {hasMore && (
         <div className="mt-12 text-center">
           <Button
-            variant="secondary"
+            variant="outline"
             size="md"
             onClick={() => setVisibleCount((prev) => prev + step)}
           >

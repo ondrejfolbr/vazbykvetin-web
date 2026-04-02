@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { Button } from "@/components/ui/button";
 
 interface HeroProps {
   backgroundImage?: string;
@@ -53,8 +53,8 @@ export function Hero({
           </p>
         )}
         <div className="mt-8">
-          <Button variant="primary" size="lg" as="a" href={ctaHref}>
-            {ctaText}
+          <Button size="lg" asChild>
+            <a href={ctaHref}>{ctaText}</a>
           </Button>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export default function OrderPage() {
@@ -211,7 +211,7 @@ export default function OrderPage() {
 
             {/* Submit */}
             <div className="pt-4 border-t border-neutral-200">
-              <Button variant="primary" size="lg" className="w-full">
+              <Button size="lg" className="w-full">
                 Odeslat objednávku
               </Button>
               <p className="mt-3 text-center font-body text-caption text-neutral-500">

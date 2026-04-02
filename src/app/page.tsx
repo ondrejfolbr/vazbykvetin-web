@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero";
 import { CategoryCard } from "@/components/CategoryCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/Footer";
 
 const featuredProducts = [
@@ -74,8 +74,8 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Button variant="ghost" as="a" href="/kytice/">
-              Zobrazit vše
+            <Button variant="ghost" asChild>
+              <a href="/kytice/">Zobrazit vše</a>
             </Button>
           </div>
         </div>
@@ -92,8 +92,8 @@ export default function Home() {
               alignment="left"
             />
             <div className="mt-8">
-              <Button variant="secondary" as="a" href="/o-nas/">
-                Více o nás
+              <Button variant="outline" asChild>
+                <a href="/o-nas/">Více o nás</a>
               </Button>
             </div>
           </div>
@@ -131,8 +131,8 @@ export default function Home() {
               Dušičky — vzpomínkové kytice a dekorace
             </h2>
             <div className="mt-6">
-              <Button variant="primary" size="md" as="a" href="/kytice/sezonni/">
-                Zobrazit kolekci
+              <Button size="md" asChild>
+                <a href="/kytice/sezonni/">Zobrazit kolekci</a>
               </Button>
             </div>
           </div>

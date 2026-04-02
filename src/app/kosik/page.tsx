@@ -2,7 +2,7 @@
 
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export default function CartPage() {
@@ -27,11 +27,11 @@ export default function CartPage() {
               Vyberte si z naší nabídky květin a přidejte je do košíku.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button variant="primary" size="md" as="a" href="/smutecni/">
-                Smuteční květiny
+              <Button size="md" asChild>
+                <a href="/smutecni/">Smuteční květiny</a>
               </Button>
-              <Button variant="secondary" size="md" as="a" href="/kytice/">
-                Kytice & Dárky
+              <Button variant="outline" size="md" asChild>
+                <a href="/kytice/">Kytice & Dárky</a>
               </Button>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function CartPage() {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <Button variant="primary" size="lg" className="w-full">
+                    <Button size="lg" className="w-full">
                       Pokračovat k objednávce
                     </Button>
                   </div>
