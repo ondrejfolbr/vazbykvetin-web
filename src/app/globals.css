@@ -128,10 +128,10 @@
   --width-narrow: 800px;
 
   /* Border Radius */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-full: 9999px;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-full: 0;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(9,7,8,0.05);
@@ -176,6 +176,11 @@
 .tracking-wide { letter-spacing: 0.05em; }
 .tracking-wider { letter-spacing: 0.1em; }
 .tracking-widest { letter-spacing: 0.2em; }
+
+/* ===== Global: no border-radius anywhere ===== */
+* {
+  border-radius: 0 !important;
+}
 
 /* ===== Base Styles ===== */
 body {
