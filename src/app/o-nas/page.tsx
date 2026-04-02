@@ -1,7 +1,6 @@
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { SectionHeading } from "@/components/SectionHeading";
-import { TrustStrip } from "@/components/TrustStrip";
 
 export default function AboutPage() {
   return (
@@ -129,13 +128,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      <TrustStrip
-        logo="PEGAS"
-        text="Součást ekosystému pohřební služby PEGAS —"
-        linkText="pohrebpegas.cz"
-        linkHref="https://pohrebpegas.cz"
-      />
 
       <Footer />
     </>

@@ -4,7 +4,6 @@ import { CategoryCard } from "@/components/CategoryCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/Button";
-import { TrustStrip } from "@/components/TrustStrip";
 import { Footer } from "@/components/Footer";
 
 const featuredProducts = [
@@ -109,14 +108,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Sekce 5: Trust strip */}
-      <TrustStrip
-        logo="PEGAS"
-        text="Součást ekosystému pohřební služby PEGAS —"
-        linkText="pohrebpegas.cz"
-        linkHref="https://pohrebpegas.cz"
-      />
 
       {/* Sekce 6: Sezónní highlight */}
       <section className="relative overflow-hidden" style={{ minHeight: "50vh" }}>
