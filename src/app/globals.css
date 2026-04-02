@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* ===== Self-hosted LatinoGothic (fallback for Typekit) ===== */
+@font-face {
+  font-family: "latinogothic";
+  src: url("/fonts/latinogothic-variable.otf") format("opentype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 /* ===== CSS Custom Properties (Design Tokens) ===== */
 :root {
   /* Primary */
