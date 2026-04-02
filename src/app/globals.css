@@ -50,7 +50,7 @@
 
   /* Background / Foreground */
   --background: var(--color-white);
-  --foreground: var(--color-black);
+  --foreground: var(--color-primary);
 }
 
 /* ===== Tailwind v4 Theme ===== */
@@ -176,6 +176,18 @@
 .tracking-wide { letter-spacing: 0.05em; }
 .tracking-wider { letter-spacing: 0.1em; }
 .tracking-widest { letter-spacing: 0.2em; }
+
+/* ===== Global: primary purple text color ===== */
+.text-neutral-black,
+.text-neutral-900,
+.text-neutral-800,
+.text-neutral-700 {
+  color: var(--color-primary) !important;
+}
+.text-neutral-600,
+.text-neutral-500 {
+  color: var(--color-primary-70) !important;
+}
 
 /* ===== Global: no border-radius anywhere ===== */
 * {
