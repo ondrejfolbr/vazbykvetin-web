@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Switch } from "@/components/ui/switch";
+import { Button } from "@/components/ui/button";
 
 interface CookieCategory {
   id: string;
@@ -32,50 +34,6 @@ const cookieCategories: CookieCategory[] = [
       "Někteří z našich reklamních partnerů mohou nastavovat soubory cookie na našich webových stránkách. Udělením souhlasu můžeme cookies nebo další osobní informace (telefonní číslo, e-mail nebo adresa) využít k vytváření profilů založených na vašich zájmech a následnému zobrazování relevantní reklamy i na jiných webových stránkách prostřednictvím reklamních systémů jako je Meta Ads, Google Ads a Sklik.",
   },
 ];
-
-function Toggle({
-  checked,
-  locked,
-  onChange,
-}: {
-  checked: boolean;
-  locked?: boolean;
-  onChange: (val: boolean) => void;
-}) {
-  return (
-    <button
-      type="button"
-      role="switch"
-      aria-checked={checked}
-      disabled={locked}
-      onClick={() => !locked && onChange(!checked)}
-      className={`relative inline-flex h-7 w-12 shrink-0 items-center rounded-full transition-colors duration-200 ${
-        locked
-          ? "bg-deep-plum cursor-default"
-          : checked
-            ? "bg-deep-plum cursor-pointer"
-            : "bg-neutral-300 cursor-pointer"
-      }`}
-    >
-      <span
-        className={`inline-flex h-5 w-5 items-center justify-center rounded-full bg-neutral-white shadow-sm transition-transform duration-200 ${
-          checked ? "translate-x-6" : "translate-x-1"
-        }`}
-      >
-        {checked && (
-          <svg className="h-3 w-3 text-deep-plum" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-          </svg>
-        )}
-        {!checked && (
-          <svg className="h-3 w-3 text-neutral-500" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        )}
-      </span>
-    </button>
-  );
-}
 
 function CategoryAccordion({
   category,
@@ -122,7 +80,7 @@ function CategoryAccordion({
               Vždy aktivní
             </span>
           )}
-          <Toggle checked={enabled} locked={category.locked} onChange={onToggle} />
+          <Switch checked={enabled} onCheckedChange={onToggle} disabled={category.locked} className="data-[state=checked]:bg-deep-plum data-[state=unchecked]:bg-neutral-300" />
         </div>
       </div>
       {expanded && (
@@ -249,8 +207,8 @@ export function CookieConsent() {
 
         {/* Action buttons */}
         <div className="flex items-center gap-4 px-6 sm:px-8 py-4 border-t border-neutral-200">
-          <button
-            type="button"
+          <Button
+            variant="ghost"
             onClick={() => {
               if (showPreferences) {
                 handleSavePreferences();
@@ -261,22 +219,21 @@ export function CookieConsent() {
             className="font-body text-body-sm font-medium text-neutral-900 hover:text-deep-plum transition-colors cursor-pointer"
           >
             {showPreferences ? "Uložit preference" : "Upravit preference"}
-          </button>
+          </Button>
           <div className="flex-1" />
-          <button
-            type="button"
+          <Button
+            variant="ghost"
             onClick={handleReject}
             className="font-body text-body-sm font-medium text-neutral-900 hover:text-deep-plum transition-colors cursor-pointer"
           >
             Odmítám
-          </button>
-          <button
-            type="button"
+          </Button>
+          <Button
             onClick={handleAccept}
             className="font-body text-body-sm font-medium text-neutral-white bg-deep-plum hover:bg-deep-plum-90 px-6 py-2.5 rounded-sm transition-colors cursor-pointer"
           >
             Souhlasím
-          </button>
+          </Button>
         </div>
 
         {/* Footer links */}
