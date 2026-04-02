@@ -4,6 +4,7 @@ import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/SectionHeading";
+import { Separator } from "@/components/ui/separator";
 
 export default function CartPage() {
   return (
@@ -41,7 +42,7 @@ export default function CartPage() {
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
               {/* Cart items */}
               <div className="lg:col-span-8">
-                <div className="border-b border-neutral-200 pb-6 mb-6">
+                <div className="pb-6">
                   <div className="flex gap-4">
                     <div className="w-24 h-24 rounded-sm bg-neutral-200 shrink-0" />
                     <div className="flex-1">
@@ -62,6 +63,7 @@ export default function CartPage() {
                     </div>
                   </div>
                 </div>
+                <Separator className="my-6" />
               </div>
 
               {/* Order summary */}
@@ -79,7 +81,8 @@ export default function CartPage() {
                       <span>Doručení</span>
                       <span>Zdarma</span>
                     </div>
-                    <div className="border-t border-neutral-200 pt-3 flex justify-between font-medium text-neutral-900">
+                    <Separator />
+                    <div className="pt-3 flex justify-between font-medium text-neutral-900">
                       <span>Celkem</span>
                       <span className="font-mono text-body font-semibold">0 Kč</span>
                     </div>
